@@ -54,3 +54,45 @@ func getUserDetails(id string) (fullName string, age uint) {
 
 // this function works same as the above function
 ```
+
+## Pointers
+
+```go
+func birthday(age int) {
+	age = age + 1
+}
+
+func main()  {
+	age := 1
+	fmt.Println(age)
+	birthday(age)
+	fmt.Println(age)
+}
+
+// OUTPUT
+// 1
+// 1
+```
+here the age variable is passed by value.
+
+>To solve this issue pointers were included
+```go
+func birthday(age *int) {
+	*age = *age + 1
+}
+
+func main()  {
+	age := 1
+	fmt.Println(age)
+	birthday(&age)
+	fmt.Println(age)
+}
+
+// OUTPUT
+// 1
+// 2
+```
+
+
+
+
