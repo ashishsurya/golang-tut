@@ -93,6 +93,30 @@ func main()  {
 // 2
 ```
 
+## Panic, Defer and Error Design Patern
 
+- Panic is Go's style of throwing error messages, similar to `throw new Error` in Javascript.
+
+
+- Defer runs the code which is specified at the end of the function call in which the defer is initiated
+- `defer` is used for clean up functions
+- Error design pattern is notifying the person who calls the function about the reason of any failure by providing the reason in return viaraible
+
+```go
+func getUser(id string) (user, err) {
+  // do some db call
+
+  if everythingFine {
+    return user, nil
+  } else {
+    return nil , errorDetails
+  }
+}
+
+
+func main() {
+  user, err := getUser(2)
+}
+```
 
 
