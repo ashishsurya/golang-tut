@@ -119,4 +119,13 @@ func main() {
 }
 ```
 
+## File Managment
+
+To read/write the contents of file we will be using **ioutils or os** package of standard library
+
+```go
+content , err := os.ReadFile(filename)
+err := os.WriteFile(filename, content)
+```
+
 
